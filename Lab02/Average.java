@@ -10,16 +10,16 @@ public class Average
         System.out.print("Enter the size of array:");
         n = s.nextInt();
         int a[] = new int[n];
-        System.out.println("Enter all the elements:");
         for(int i = 0; i < n ; i++)
         {
+            System.out.println("Enter element: " + a[i]);
             a[i] = s.nextInt();
             sum = sum + a[i];
         }
         Arrays.sort(a);
-        System.out.println("Sorted array : "+Arrays.toString(a));
+        System.out.println("Sorted array : " + Arrays.toString(a));
         System.out.println("Sum: " + sum);
         average = (float)sum / n;
-        System.out.println("Average:"+average);
+        System.out.println("Average: " + average);
     }
 }
