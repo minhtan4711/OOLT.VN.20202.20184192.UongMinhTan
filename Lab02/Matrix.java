@@ -1,4 +1,3 @@
-package sum_of_two_matrix;
 import java.util.Scanner;
 public class Matrix {
 	public static void main(String[] args) {
