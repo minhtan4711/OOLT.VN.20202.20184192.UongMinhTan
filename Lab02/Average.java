@@ -12,7 +12,7 @@ public class Average
         int a[] = new int[n];
         for(int i = 0; i < n ; i++)
         {
-            System.out.println("Enter element: " + a[i]);
+            System.out.println("Enter element " + i);
             a[i] = s.nextInt();
             sum = sum + a[i];
         }
