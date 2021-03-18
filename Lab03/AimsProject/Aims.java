@@ -1,4 +1,4 @@
-package src;
+package AimsProject;
 
 public class Aims {
 
