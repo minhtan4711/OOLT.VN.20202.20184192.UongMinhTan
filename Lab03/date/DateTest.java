@@ -1,41 +1,62 @@
 package date;
+import java.util.Scanner;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
-
-class DateTest {
-	private MyDate myDate;
-	
-	@BeforeEach
-	public void setUp() throws Exception {
-		myDate = new MyDate();
+public class DateTest {
+	public static void main(String[] args) {
+		MyDate date;
+		
+		// test 
+		int day = 56;
+		int month = 6;
+		int year = 7053;
+		date = new MyDate(day, month, year);
+		testMyDateConstructWithIntParam(date, day, month, year);
+		
+		String strDate;
+		strDate = accept();
+		date = new MyDate(strDate);
+		testMyDateConstructWithStrParam(date, strDate);
 	}
 	
-	@Test
-	@DisplayName("Normal date import")
-	public void testGetDay() {
-		assertEquals(12, myDate.getDay());
-		assertEquals(12, myDate.getDay());
-		assertEquals(13, myDate.getDay());
+	// method
+	public static String accept() {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the date (February 18th 2019): ");
+		String strDate = input.nextLine();
+		input.close();
+		return strDate;
 	}
 	
-	@Test
-	@DisplayName("Normal date import")
-	public void testGetMonth() {
-		assertEquals(12, myDate.getMonth());
-		assertEquals(12, myDate.getMonth());
-		assertEquals(3, myDate.getMonth());
-	}
-	
-	@Test
-	@DisplayName("Normal date import")
-	public void testGetYear() {
-		assertEquals(1212, myDate.getYear());
-		assertEquals(2012, myDate.getYear());
-		assertEquals(2021, myDate.getYear());
-	}
+	// test with constructor
+	public static void testMyDateConstructWithIntParam(MyDate date, int day, int month, int year) {
 
+		if (day != date.getDay()) {
+			System.out.println("Wrong Day");
+		} else if (month != date.getMonth()) {
+			System.out.println("Wrong Month");
+		} else if (year != date.getYear()) {
+			System.out.println("Wrong Year");
+		} else {
+			System.out.println("Correct");
+		}
+		
+	}
+	
+	public static void testMyDateConstructWithStrParam(MyDate date, String strDate) {
+		int[] testDate = new int[3];
+//		MyDate tmpDate = new MyDate();
+		
+		testDate = MyDate.extractStringDate(strDate);
+		
+		if (testDate[1] != date.getDay()) {
+			System.out.println("Wrong Day");
+		} else if (testDate[0] != date.getMonth()) {
+			System.out.println("Wrong Month");
+		} else if (testDate[2] != date.getYear()) {
+			System.out.println("Wrong Year");
+		} else {
+			System.out.println("Correct");
+		}
+		
+	}
 }
