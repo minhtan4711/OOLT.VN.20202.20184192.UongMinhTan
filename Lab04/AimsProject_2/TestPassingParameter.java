@@ -1,5 +1,6 @@
 package AimsProject_2;
 
+
 public class TestPassingParameter {
 
 	public static void main(String[] args) {

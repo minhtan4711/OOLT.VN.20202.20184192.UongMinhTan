@@ -1,5 +1,6 @@
 package AimsProject_2;
 
+
 public class Order {
 	public static final int MAX_NUMBER_ORDERED = 10;
 	public static final int MAX_LIMITED_ORDERS = 5;
